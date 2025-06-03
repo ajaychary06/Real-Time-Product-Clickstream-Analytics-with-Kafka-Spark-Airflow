@@ -87,23 +87,23 @@ Make sure both Zookeeper and Kafka server are running. You can use .bat files or
 #### 2.Run Kafka Producer (on Windows)
 This script sends simulated product click events into the Kafka topic.
 
-python3 kafka_producer.py
+- python3 kafka_producer.py
 
 #### 3.Run Spark Structured Streaming Consumer (on Ubuntu/WSL)
 This script reads from Kafka, performs real-time aggregations, and writes the output to both Parquet and CSV formats.
 
-spark-submit spark_streaming_consumer.py
+- spark-submit spark_streaming_consumer.py
 
 #### 4.Start Apache Airflow Scheduler (on Ubuntu/WSL)
 Used to automate and schedule the pipeline using DAGs.
 
-source ~/airflow_env/bin/activate
-airflow scheduler
+- source ~/airflow_env/bin/activate
+- airflow scheduler
 
 #### 5.Launch Flask Dashboard (on Ubuntu/WSL)
 A lightweight web dashboard that reads Parquet data and shows product click trends using Plotly.
 
-python3 app.py
+- python3 app.py
 
 
 
