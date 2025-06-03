@@ -35,7 +35,7 @@ Key Features:
 | Deployment        | WSL (Ubuntu) + Windows                         |
 | Version Control   | Git & GitHub                                   |
 
-##📂 Project Structure
+## 📂 Project Structure
 
 real-time-product-pipeline/
 ├── kafka_producer.py                  # Simulates real-time click events
