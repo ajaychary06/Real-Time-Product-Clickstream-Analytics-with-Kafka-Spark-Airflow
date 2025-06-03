@@ -81,27 +81,35 @@ Runs a DAG named kafka_spark_streaming_pipeline which triggers the Spark job on 
 Works with Kafka, Spark, and Airflow all locally (tested on Windows + Ubuntu WSL)
 
 ### Step-by-Step:
-1. Start Kafka (Windows)
+#### 1.Start Kafka Services (on Windows)
+Make sure both Zookeeper and Kafka server are running. You can use .bat files or command line to start the services.
 
-2. Run Kafka Producer
-'''
+#### 2.Run Kafka Producer (on Windows)
+This script sends simulated product click events into the Kafka topic.
+
 python3 kafka_producer.py
 
-'''
-3. Run Spark Consumer
-'''
+#### 3.Run Spark Structured Streaming Consumer (on Ubuntu/WSL)
+This script reads from Kafka, performs real-time aggregations, and writes the output to both Parquet and CSV formats.
+
 spark-submit spark_streaming_consumer.py
-'''
-4. Start Airflow Scheduler (Ubuntu)
-'''
+
+#### 4.Start Apache Airflow Scheduler (on Ubuntu/WSL)
+Used to automate and schedule the pipeline using DAGs.
+
 source ~/airflow_env/bin/activate
 airflow scheduler
-'''
-5. Start Flask Dashboard
-'''
+
+#### 5.Launch Flask Dashboard (on Ubuntu/WSL)
+A lightweight web dashboard that reads Parquet data and shows product click trends using Plotly.
+
 python3 app.py
 
-'''
+
+
+🟢 You should now see real-time updates on the dashboard and data stored in both CSV and Parquet formats.
+
+
 
 ## 📷 Screenshots
 
